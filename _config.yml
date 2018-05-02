@@ -1,0 +1,23 @@
+title:             Dohee Blog
+email:             seong0420hei@gmail.com
+description:       Front-end 기술 관련 지식블로그
+author:            Dohee Blog
+baseurl:           "/"
+url:               "http://seongdohee.github.io"
+
+# Social Profiles
+#twitter_username:  SBootstrap
+github_username:   seongdohee
+email_username:    seong0420hei@gmail.com
+
+#facebook_username: StartBootstrap
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+disqus_shortname: seongdohee.github.io
