@@ -19,5 +19,7 @@ paginate_path:     "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 disqus_shortname: seongdohee.github.io

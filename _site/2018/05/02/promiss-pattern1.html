@@ -4,6 +4,24 @@
 
   <head>
 
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Promise 패턴1 - 자바스크립트와 비동기 | Dohee Blog</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Promise 패턴1 - 자바스크립트와 비동기" />
+<meta name="author" content="Dohee Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Promise에 대해 설명하기 전에 먼저 자바스크립트의 비동기 처리에 대해 이해해야 이것을 왜 사용하는지, 어떻게 사용해야 하는지 감이 잡힐것이다. 자바스크립트는 싱글쓰레드 기반으로, 한번에 한가지 일만 처리할 수 있다. 즉, 모든 프로세스가 동기 처리된다. 하지만 자바스크립트가 사용된 어플리케이션들을 살펴보면, 비동기로 처리되는 일들을 종종 볼 수 있다. 대표적으로 Ajax를 들 수 있다. 만약 Ajax가 동기 처리되었다면, 네트워크나 서버환경에 의해 응답이 지연되었을 때 프로그램은 아무것도 할 수 없는 블로킹 상태가 될 것이다. 이러한 단점들로 인해 자바스크립트가 실행되는 브라우저나 Node.js 같은 환경에서는 이벤트루프를 통해 동시성을 지원한다. (이와 같은 자바스크립트 동작 원리에 대해서는 따로 포스팅할 예정)" />
+<meta property="og:description" content="Promise에 대해 설명하기 전에 먼저 자바스크립트의 비동기 처리에 대해 이해해야 이것을 왜 사용하는지, 어떻게 사용해야 하는지 감이 잡힐것이다. 자바스크립트는 싱글쓰레드 기반으로, 한번에 한가지 일만 처리할 수 있다. 즉, 모든 프로세스가 동기 처리된다. 하지만 자바스크립트가 사용된 어플리케이션들을 살펴보면, 비동기로 처리되는 일들을 종종 볼 수 있다. 대표적으로 Ajax를 들 수 있다. 만약 Ajax가 동기 처리되었다면, 네트워크나 서버환경에 의해 응답이 지연되었을 때 프로그램은 아무것도 할 수 없는 블로킹 상태가 될 것이다. 이러한 단점들로 인해 자바스크립트가 실행되는 브라우저나 Node.js 같은 환경에서는 이벤트루프를 통해 동시성을 지원한다. (이와 같은 자바스크립트 동작 원리에 대해서는 따로 포스팅할 예정)" />
+<link rel="canonical" href="http://localhost:4000/2018/05/02/promiss-pattern1.html" />
+<meta property="og:url" content="http://localhost:4000/2018/05/02/promiss-pattern1.html" />
+<meta property="og:site_name" content="Dohee Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-02T13:00:00+09:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Dohee Blog"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/05/02/promiss-pattern1.html"},"description":"Promise에 대해 설명하기 전에 먼저 자바스크립트의 비동기 처리에 대해 이해해야 이것을 왜 사용하는지, 어떻게 사용해야 하는지 감이 잡힐것이다. 자바스크립트는 싱글쓰레드 기반으로, 한번에 한가지 일만 처리할 수 있다. 즉, 모든 프로세스가 동기 처리된다. 하지만 자바스크립트가 사용된 어플리케이션들을 살펴보면, 비동기로 처리되는 일들을 종종 볼 수 있다. 대표적으로 Ajax를 들 수 있다. 만약 Ajax가 동기 처리되었다면, 네트워크나 서버환경에 의해 응답이 지연되었을 때 프로그램은 아무것도 할 수 없는 블로킹 상태가 될 것이다. 이러한 단점들로 인해 자바스크립트가 실행되는 브라우저나 Node.js 같은 환경에서는 이벤트루프를 통해 동시성을 지원한다. (이와 같은 자바스크립트 동작 원리에 대해서는 따로 포스팅할 예정)","@type":"BlogPosting","url":"http://localhost:4000/2018/05/02/promiss-pattern1.html","headline":"Promise 패턴1 - 자바스크립트와 비동기","dateModified":"2018-05-02T13:00:00+09:00","datePublished":"2018-05-02T13:00:00+09:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,7 +42,7 @@
   <link rel="stylesheet" href="/assets/syntax.css">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://seongdohee.github.io/2018/05/02/promiss-pattern1.html">
+  <link rel="canonical" href="http://localhost:4000/2018/05/02/promiss-pattern1.html">
   <link rel="alternate" type="application/rss+xml" title="Dohee Blog" href="/feed.xml">
 
 </head>
