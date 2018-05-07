@@ -23,3 +23,4 @@ plugins:
   - jekyll-sitemap
 
 disqus_shortname: seongdohee.github.io
+google_tracking_id: UA-118781630-1
