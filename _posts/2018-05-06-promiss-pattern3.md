@@ -112,7 +112,7 @@ background: '/img/posts/callback_hell.jpeg'
     })
     
     
-    Promise.all([p1, p2, p3]).then(values => {
+    Promise.all([task1, task2, task3]).then(values => {
         console.log(values);
     }).catch(err => {
         console.log(err);
