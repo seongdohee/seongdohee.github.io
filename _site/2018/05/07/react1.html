@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>[ReactJS] react 실전 프로젝트 - react 기초 | Dohee Blog</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="[ReactJS] react 실전 프로젝트 - react 기초" />
+<meta name="author" content="Dohee Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="이번에 회사를 그만두고 구인을 하게 되면서, 많은 회사에서 react를 선택하고 사용하고 있음을 느꼈다. 실무해서 사용해본 경험도 벌써 1년이나 지났고, 그동안 엄청난 버전업을 하였기에 이번 기회에 간단한 앱을 만들면서 다시 한번 react에 대해 복습하고 그 과정을 포스팅하고자 한다." />
+<meta property="og:description" content="이번에 회사를 그만두고 구인을 하게 되면서, 많은 회사에서 react를 선택하고 사용하고 있음을 느꼈다. 실무해서 사용해본 경험도 벌써 1년이나 지났고, 그동안 엄청난 버전업을 하였기에 이번 기회에 간단한 앱을 만들면서 다시 한번 react에 대해 복습하고 그 과정을 포스팅하고자 한다." />
+<link rel="canonical" href="http://localhost:4000/2018/05/07/react1.html" />
+<meta property="og:url" content="http://localhost:4000/2018/05/07/react1.html" />
+<meta property="og:site_name" content="Dohee Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-07T13:00:00+09:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Dohee Blog"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/05/07/react1.html"},"description":"이번에 회사를 그만두고 구인을 하게 되면서, 많은 회사에서 react를 선택하고 사용하고 있음을 느꼈다. 실무해서 사용해본 경험도 벌써 1년이나 지났고, 그동안 엄청난 버전업을 하였기에 이번 기회에 간단한 앱을 만들면서 다시 한번 react에 대해 복습하고 그 과정을 포스팅하고자 한다.","@type":"BlogPosting","url":"http://localhost:4000/2018/05/07/react1.html","headline":"[ReactJS] react 실전 프로젝트 - react 기초","dateModified":"2018-05-07T13:00:00+09:00","datePublished":"2018-05-07T13:00:00+09:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-site-verification" content="g_Gtl8USWCgFWN_TqXilP0upano44h6f70CJZhvStfA" />
+
+  <title>
+    [ReactJS] react 실전 프로젝트 - react 기초 - Dohee Blog
+    
+  </title>
+
+  <meta name="description" content="이번에 회사를 그만두고 구인을 하게 되면서, 많은 회사에서 react를 선택하고 사용하고 있음을 느꼈다. 실무해서 사용해본 경험도 벌써 1년이나 지났고, 그동안 엄청난 버전업을 하였기에 이번 기회에 간단한 앱을 만들면서 다시 한번 react에 대해 복습하고 그 과정을 포스팅하고자 한다.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/assets/syntax.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/05/07/react1.html">
+  <link rel="alternate" type="application/rss+xml" title="Dohee Blog" href="/feed.xml">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118781630-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118781630-1');
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Dohee Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <!--<li class="nav-item">-->
+          <!--<a class="nav-link" href="/">Home</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+          <!--<a class="nav-link" href="/about">About</a>-->
+        <!--</li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/img/posts/react.jpg')">
+
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>[ReactJS] react 실전 프로젝트 - react 기초</h1>
+          
+          <h2 class="subheading">react로 mac의 미리 알림 앱 만들기</h2>
+          
+          <span class="meta">Posted by
+            <a href="#">[ReactJS] react 실전 프로젝트 - react 기초</a>
+            on May 07, 2018</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      <p>이번에 회사를 그만두고 구인을 하게 되면서, 많은 회사에서 <code class="highlighter-rouge">react</code>를 선택하고 사용하고 있음을 느꼈다. 실무해서 사용해본 경험도 벌써 1년이나 지났고, 그동안 엄청난 버전업을 하였기에
+이번 기회에 간단한 앱을 만들면서 다시 한번 <code class="highlighter-rouge">react</code>에 대해 복습하고 그 과정을 포스팅하고자 한다.</p>
+
+<h2 id="what-is-react">What is React?</h2>
+
+<p><code class="highlighter-rouge">React</code>는 페이스북이 개발한 UI 라이브러리이다. <code class="highlighter-rouge">React</code>의 핵심은 <u>재사용 가능한 UI</u>의 생성이다. 이 재사용 가능한 UI를 컴포넌트화 하여 더 복잡한 UI 화면을 구성한다. 일반적인 MVC, MV* 패턴에서 View만 담당한다. 
+이외의 모델이나 다른 부분은 다른 라이브러리를 가져와 조합하여 사용해도 무방하다.</p>
+
+<h3 id="1-virtual-dom">1. Virtual DOM</h3>
+
+<p><code class="highlighter-rouge">React</code>는 DOM을 <code class="highlighter-rouge">Virtual DOM</code>을 이용해 표현하다. <code class="highlighter-rouge">React</code>는 모델이 업데이트 되면, 화면을 re-render 한다. 일반적으로 jQuery를 이용해 DOM을 업데이트하는 상황을 생각해보자.
+모델이 업데이트됨으로써 모델이 영향을 미치는 DOM 부분만 선택자를 통해 업데이트 한다. 하지만 <code class="highlighter-rouge">React</code>는 해당 부분을 모두 다시 re-render 해버린다. 이렇게 되면 당연히 reflow, repaint상황이 더 많이 발생할 테고,
+이에 따른 성능 문제는 없을까?</p>
+<div style="text-align: center;">
+<img src="https://i.imgur.com/QRtqIui.png" width="700" />
+</div>
+<p><code class="highlighter-rouge">React</code>는 <code class="highlighter-rouge">Virtual DOM</code>을 사용하여 이러한 걱정을 해소한다.  후술한 <code class="highlighter-rouge">JSX</code>를 사용하여 최종 결과물(업데이트된 모델이 반영된 UI)에 대해서만 선언적으로 기술한다. 
+이후 모델의 업데이트가 발생하면 실제 DOM 트리에 반영하는 것이 아닌 가상 DOM 트리에만 적용한 뒤 최종적으로 이 두 DOM 트리를 비교하여 변경된 부분만 실제 DOM에 반영한다.
+따라서 DOM을 직접 조작할 때 발생할 수 있는 reflow, repaint에 의한 성능 문제는 걱정하지 않아도 된다.</p>
+
+<h3 id="2-component">2. Component</h3>
+<p><code class="highlighter-rouge">React</code>의 핵심은 재사용 가능한 UI의 생성이라고 했다. 모든 UI는 컴포넌트화 하여 구성한다. 아래의 코드는 여러개의 컴포넌트를 조합하여 하나의 어플리케이션을 구성하는 예제이다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">Header</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello world!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">Header</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">Content</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                content...
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">Content</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">Footer</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                footer
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">Footer</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="nx">Header</span> <span class="k">from</span> <span class="s1">'./Header'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="nx">Content</span> <span class="k">from</span> <span class="s1">'./Conent'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="nx">Footer</span> <span class="k">from</span> <span class="s1">'./Footer'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Header</span><span class="p">&gt;&lt;/</span><span class="nc">Header</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Content</span><span class="p">&gt;&lt;/</span><span class="nc">Content</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Footer</span><span class="p">&gt;&lt;/</span><span class="nc">Footer</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+
+<p>각각 Header, Content, Footer 라는 컴포넌트를 만들어, App에서 사용하도록 하였다.
+이렇게 컴포넌트화 하면 필요한 곳에서 얼마든지 재사용할 수 있다. 심화 내용은 실제 프로젝트 포스트를 작성하면서 소개하도록 하겠다.</p>
+
+<h3 id="3-jsx">3. JSX</h3>
+<p><code class="highlighter-rouge">JSX</code>는 Javscript와 XML을 결합한 확장 문법이라고 볼 수 있다. 이 문법을 사용하여 자바스크립트 코드에서 마크업을 할 수 있고, 손쉽게 변수나 함수를 태그 안에 바인딩 할 수 있다.
+<code class="highlighter-rouge">JSX</code>는 필수 사항이 아니지만, 왠만하면 사용하기를 권장한다. (초심자라면 특히.. 인터넷에 돌아다니는 거의 모든 react 예제는 <code class="highlighter-rouge">JSX</code>로 작성되어 있다.)</p>
+
+<p>이번 포스트에서는 <code class="highlighter-rouge">JSX</code>를 어떻게 사용하는지 간단하게 알아보고, 심화 내용은 실제 프로젝트 포스트를 작성하면서 소개하도록 하겠다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<p>먼저 다른 코드는 다 무시하고 <code class="highlighter-rouge">render()</code> 내부의 <code class="highlighter-rouge">return</code> 구문만 살펴보자. <code class="highlighter-rouge">return</code>내부에 HTML 마크업이 되어 있는 것을 확인할 수 있다.
+기본적으로, 기존과 동일하게 <code class="highlighter-rouge">render</code> 함수에서 원하는 UI를 마크업하여 <code class="highlighter-rouge">return</code>값으로 지정하면 된다. (참 쉽죠?) 유의해야 할 점은, 
+<code class="highlighter-rouge">JSX</code>에서 마크업을 할 때 몇가지 지켜야 할 규칙이 있다.</p>
+
+<h4 id="감싸진-element">감싸진 Element</h4>
+
+<p><code class="highlighter-rouge">JSX</code>는 무조건 하나의 요소로 감싸야 한다. 즉 최상위 요소는 1개여야만한다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="c1">// 이 코드는 에러가 발생합니다.!!</span>
+    
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<p>위 코드와 같이 최상위에 요소가 2개 있는 경우 에러를 발생한다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+<p>위 코드와 같이 하나의 요소로 감싸야한다. css와 같은 스타일 가이드가 미리 나와서 다른 요소로 감싸기 곤란한 상황이라면, <code class="highlighter-rouge">&lt;Fragments&gt;</code> 태그를 사용한다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+      <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nc">Fragments</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nc">Fragments</span><span class="p">&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+
+<h4 id="자바스크립트-표현식">자바스크립트 표현식</h4>
+
+<p><code class="highlighter-rouge">JSX</code>를 사용하면 변수나 함수를 손쉽게 바인딩 할 수 있다고 했다. 아래 코드를 살펴보자.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+        
+        <span class="nx">clickButton</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span>
+        <span class="p">}</span>
+    
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        
+            <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'dohee'</span><span class="p">;</span>
+            
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello <span class="si">{</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">clickButton</span><span class="si">}</span><span class="p">&gt;</span>click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">{  }</code>로 표현된 부분을 자세히 보자. <code class="highlighter-rouge">{  }</code>를 사용하면 자바스크립트 표현식을 사용 할 수 있다. 이 표현식을 가지고 조건부 렌더링 또한 가능하다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+        
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        
+           <span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="si">{</span>
+                        <span class="nx">condition</span> <span class="p">?</span> 
+                        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>true<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>false<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="si">}</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+
+<p>주의해야 할 점은, if문은 사용할 수 없다는 것이다. 위와 같이 삼항 연산식을 사용하거나 즉시실행함수(IIFE)를 사용해야한다.</p>
+
+<h4 id="inline-style">Inline Style</h4>
+
+<p>태그 내부에 Style 속성을 사용하게 될 경우, 아래와 같이 사용해야한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+        
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        
+            <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">marginTop</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="na">color</span><span class="p">:</span> <span class="s1">'blue'</span>
+            <span class="p">};</span>
+            
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style=</span><span class="si">{</span><span class="nx">style</span><span class="si">}</span><span class="p">&gt;</span>inline style<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+    
+</code></pre></div></div>
+
+<h3 id="3-one-way-data-flow">3. One-way Data Flow</h3>
+
+<p><code class="highlighter-rouge">React</code>에서는 데이터가 부모 컴포넌트에서 자식컴포넌트로 한 방향으로만 흐른다. two-way data bind를 사용하는 <code class="highlighter-rouge">AngularJs</code>를 경험해본 개발자라면, 이 개념에 적응하는데 시간이 좀 걸릴 수 있다. 
+<code class="highlighter-rouge">React</code>의 단방향 데이터의 흐름에서 다음과 같은 두가지 개념을 사용한다.</p>
+
+<h4 id="props">Props</h4>
+
+<p>부모 컴포넌트에서 자식 컴포넌트로 전달하는 값이다. 이 Props는 전달받을수만 있고 수정은 불가능하다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="s1">'./Child'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">Parent</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+        
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+            
+            <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'dohee'</span><span class="p">;</span>
+            
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">data=</span><span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Child</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">Parent</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>위와 같이 <code class="highlighter-rouge">Parent</code> 컴포넌트에서 <code class="highlighter-rouge">name</code>이라는 <code class="highlighter-rouge">Props</code>를 <code class="highlighter-rouge">Child</code>컴포넌트에 전달하였다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">Child</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+        
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+            
+            
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">Child</span><span class="p">;</span>
+
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Child</code> 컴포넌트에서 전달받아 사용하는 코드이다. <code class="highlighter-rouge">this.props</code>로 접근하여 사용할 수는 있지만, 값을 변경할 수는 없다.</p>
+
+<h4 id="state">State</h4>
+
+<p><code class="highlighter-rouge">Props</code>와는 달리 <code class="highlighter-rouge">State</code>는 변경 가능한 컴포넌트의 상태값이다. 이 <code class="highlighter-rouge">State</code>가 변경되면, 컴포넌트의 re-render가 발생한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+    
+    <span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+    
+        <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">name</span> <span class="p">:</span> <span class="s1">''</span>
+        <span class="p">}</span>
+        
+        <span class="nx">clickButton</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="s1">'dohee'</span><span class="p">});</span>
+        <span class="p">}</span>
+        
+        <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+            
+            
+            <span class="k">return</span> <span class="p">(</span>
+                
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    name: <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>
+                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">clickButton</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>change name<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>버튼을 클릭하면, <code class="highlighter-rouge">setState</code>를 호출하여 <code class="highlighter-rouge">state</code>값을 변경하는 코드이다. <code class="highlighter-rouge">clickButton</code> 함수에 의해 <code class="highlighter-rouge">state</code>값이 변경되고 나면, <code class="highlighter-rouge">render()</code>함수가 호출되고 컴포넌트가 re-render되어 변경된 이름이 출력될 것이다.</p>
+
+<h1 style="text-align: center;">. . .</h1>
+
+<p>여기까지 기본적인 <code class="highlighter-rouge">React</code>의 기초와 특징에 대해서 포스팅하였다. 다음 포스팅부터는 mac의 미리 알림 앱을 <code class="highlighter-rouge">React</code>로 구현하는 프로젝트를 위주로 구성해보려고 한다. 이 포스팅은 아래의 링크를 참고하여 작성하였다.</p>
+
+<ul>
+  <li><a href="https://reactjs.org/">React 공식 사이트</a></li>
+  <li><a href="http://webframeworks.kr/tutorials/react/getting-started/">웹 Frameworks</a></li>
+  <li><a href="https://velopert.com/3612">VELOPERT.LOG</a></li>
+</ul>
+
+
+      <hr>
+
+      <div class="clearfix">
+
+        
+        <a class="btn btn-primary float-left" href="/2018/05/06/promiss-pattern3.html" data-toggle="tooltip" data-placement="top" title="Promise 패턴3 - 응용편">&larr; Previous<span class="d-none d-md-inline"> Post</span></a>
+        
+        
+
+      </div>
+
+      <div id="disqus_thread" style="margin-top: 10px;"></div>
+      <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://seongdohee-github-io.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/seongdohee">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Dohee Blog 2018</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  </body>
+
+</html>

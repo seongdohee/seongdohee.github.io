@@ -228,4 +228,4 @@ Node.js 환경이였기 때문에 각 작업은 비동기로 동작하지만, �
 이렇게 2차례의 포스팅으로 `Promise`에 대해 알아보았다. 작성한 포스팅은 단편적인 면만 설명하고 있으므로 좀더 자세한 내용은 아래 링크를 통해 참고하길 바란다.
 
 - [MDN - Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [eBook - You Don't Know JS 비동기와 성능](http://www.hanbit.co.kr/store/books/look.php?p_code=E7131315570)
+- [eBook - You Don't Know JS 비동기와 성능](http://www.hanbit.co.kr/store/books/look.php?p_의code=E7131315570)
